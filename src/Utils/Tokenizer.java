@@ -37,11 +37,11 @@ public class Tokenizer {
         ts.reset(); // Resets this stream to the beginning. 
         while (ts.incrementToken()) {
             String token = ts.getAttribute(CharTermAttribute.class).toString();
-            if (tokensFrequency.containsKey(token)) {
-                tokensFrequency.put(token, tokensFrequency.get(token) + 1);
-            } else {
-                tokensFrequency.put(token, 1);
+            Integer count = tokensFrequency.get(token);
+            if (count == null) {
+                count = 0;
             }
+            tokensFrequency.put(token, ++count);
         }
         ts.end(); // Perform end-of-stream operations
         ts.close();
