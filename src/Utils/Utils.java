@@ -15,8 +15,8 @@ import java.nio.file.Files;
  */
 public class Utils {
 
-    public static final String FILES_DIR = "C:\\Users\\Dimitris\\Desktop\\lisa";
-    public static final String XML_FILES_DIR = "C:\\Users\\Dimitris\\Desktop\\lisaXML";
+    public static final String FILES_DIR = "lisa";
+    public static final String XML_FILES_DIR = "lisaXML";
 
     public static String fileToString(File path) throws IOException {
         return new String(Files.readAllBytes(path.toPath()));
